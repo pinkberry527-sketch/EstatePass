@@ -1,10 +1,12 @@
 export type VerifyVisitorPassPayload = {
   access_code: string;
-  estate_id: number;
+   gate_id: number;
 };
 
 export type VerifiedVisitorPass = {
   valid: boolean;
+  reason: string;
+
   pass: {
     id: number;
     access_code: string;
@@ -16,5 +18,5 @@ export type VerifiedVisitorPass = {
     expected_arrival: string;
     expected_departure: string | null;
     status: string;
-  };
+  } | null;
 };
